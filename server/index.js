@@ -27,13 +27,8 @@ app.listen(process.env.PORT,()=>{
     console.log(`Server is running at port ${process.env.PORT}`)
 })
 
-if (process.env.NODE_ENV === 'production') {
-    app.use(express.static(path.join(__dirname, '..', 'client', 'dist')));
-    app.get('*', (req, res) => {
-        res.sendFile(path.resolve(__dirname, '..', 'client', 'dist', 'index.html'));
+
+app.use(express.static(path.join(__dirname, '..', 'client', 'dist')));
+app.get('*', (req, res) => {
+    res.sendFile(path.resolve(__dirname, '..', 'client', 'dist', 'index.html'));
     });
-} else {
-    app.get('/', (req, res) => {
-        res.send('Please set NODE_ENV to production')
-    });
-}
