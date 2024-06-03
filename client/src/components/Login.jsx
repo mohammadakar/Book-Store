@@ -10,7 +10,7 @@ const Login = ({setRole}) => {
     const navigate=useNavigate();
     axios.defaults.withCredentials=true;
     const handleSubmit=()=>{
-        axios.post('http://localhost:3500/api/auth/login',{username,password,role})
+        axios.post('https://book-store-4lc1.onrender.com/api/auth/login',{username,password,role})
         .then(res=>{
             if(res.data.login && res.data.role=='admin'){
                 setRole('admin')

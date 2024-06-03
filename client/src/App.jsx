@@ -16,7 +16,7 @@ function App() {
 
   axios.defaults.withCredentials=true;
   useEffect(()=>{
-      axios.get('http://localhost:3500/api/auth/verify')
+      axios.get('https://book-store-4lc1.onrender.com/api/auth/verify')
       .then(res=>{
           if(res.data.login){
               setRole(res.data.role)

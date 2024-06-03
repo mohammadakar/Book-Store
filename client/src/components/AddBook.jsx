@@ -11,7 +11,7 @@ const AddBook = () => {
     const navigate=useNavigate();
     const handleSubmit=(e)=>{
         e.preventDefault()
-        axios.post('http://localhost:3500/api/book/add',{name,author,imageUrl})
+        axios.post('https://book-store-4lc1.onrender.com/api/book/add',{name,author,imageUrl})
         .then(res=>{
             if(res.data.added){
                 navigate("/books")

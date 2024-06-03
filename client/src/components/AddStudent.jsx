@@ -13,7 +13,7 @@ const AddStudent = () => {
     const navigate=useNavigate();
     const handleSubmit=(e)=>{
         e.preventDefault()
-        axios.post('http://localhost:3500/api/student/register',{roll,username,grade,password})
+        axios.post('https://book-store-4lc1.onrender.com/api/student/register',{roll,username,grade,password})
         .then(res=>{
             if(res.data.alreadyRegistered){
                 toast.error("Student already registered")

@@ -13,7 +13,7 @@ const EditBook = () => {
     const { id } =useParams();
 
     useEffect(()=>{
-        axios.get(`http://localhost:3500/api/book/book/${id}`)
+        axios.get(`https://book-store-4lc1.onrender.com/api/book/book/${id}`)
         .then(res=>{
             console.log(res);
             setName(res.data.name);
@@ -25,7 +25,7 @@ const EditBook = () => {
 
     const handleSubmit=(e)=>{
         e.preventDefault()
-        axios.put(`http://localhost:3500/api/book/edit/${id}`,{name,author,imageUrl})
+        axios.put(`https://book-store-4lc1.onrender.com/api/book/edit/${id}`,{name,author,imageUrl})
         .then(res=>{
             if(res.data.edited){
                 console.log(res);

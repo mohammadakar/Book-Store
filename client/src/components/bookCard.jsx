@@ -10,7 +10,7 @@ const BookCard = ({book,role}) => {
 
     const handleDeleteBook = (e) => {
         e.preventDefault();
-        axios.delete(`http://localhost:3500/api/book/delete/${book._id}`)
+        axios.delete(`https://book-store-4lc1.onrender.com/api/book/delete/${book._id}`)
             .then(res => {
                 console.log(res);
                 setDeleted(true);
